@@ -6,6 +6,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
+// Add cookie handling
+builder.Services.AddHttpContextAccessor(); // Behövs för att kunna läsa/skriva cookies
+builder.Services.AddScoped<CookieService>(); // Registrera din cookie-tjänst
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
