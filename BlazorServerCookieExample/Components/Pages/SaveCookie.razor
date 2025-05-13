@@ -1,0 +1,19 @@
+﻿@page "/save-cookie"
+@inject CookieService CookieService
+@inject NavigationManager NavigationManager
+@rendermode InteractiveServer
+
+<h3>Skriv in text att spara i en cookie</h3>
+
+<input @bind="TextToSave" placeholder="Skriv något..." class="form-control mb-2" />
+<button @onclick="Save" class="btn btn-primary">Spara i cookie</button>
+
+@code {
+    private string TextToSave = string.Empty;
+
+    private void Save()
+    {
+        CookieService.SetCookie("UserText", TextToSave, 60); // sparas i 60 min
+        NavigationManager.NavigateTo("/read-cookie");
+    }
+}

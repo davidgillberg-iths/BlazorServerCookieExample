@@ -1,7 +1,29 @@
 ﻿@page "/"
+@inject CookieService CookieService
+@rendermode InteractiveServer
 
-<PageTitle>Home</PageTitle>
+<h3>Välj tema</h3>
+<button class="btn btn-dark" @onclick="@(() => SetTheme("dark"))">Mörkt tema</button>
+<button class="btn btn-light" @onclick="@(() => SetTheme("light"))">Ljust tema</button>
+<br />
+Current Theme: @CurrentTheme
 
-<h1>Hello, world!</h1>
+@if (!string.IsNullOrEmpty(CurrentTheme))
+{
+    <p>Aktivt tema: <strong>@CurrentTheme</strong></p>
+}
 
-Welcome to your new app.
+@code {
+    private string? CurrentTheme = "";
+
+    protected override void OnInitialized()
+    {
+        CurrentTheme = CookieService.GetCookie("theme");
+    }
+
+    private void SetTheme(string theme)
+    {
+        CookieService.SetCookie("theme", theme, 60); // spara i 60 minuter
+        CurrentTheme = theme;
+    }
+}

@@ -1,0 +1,22 @@
+﻿@page "/read-cookie"
+@inject CookieService CookieService
+
+<h3>Text hämtad från cookie</h3>
+
+@if (SavedText is null)
+{
+    <p><em>Ingen cookie hittades.</em></p>
+}
+else
+{
+    <p><strong>Innehåll:</strong> @SavedText</p>
+}
+
+@code {
+    private string? SavedText;
+
+    protected override void OnInitialized()
+    {
+        SavedText = CookieService.GetCookie("UserText");
+    }
+}
