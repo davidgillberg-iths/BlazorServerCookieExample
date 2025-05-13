@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35825.156
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorServerCookieExample", "BlazorServerCookieExample\BlazorServerCookieExample.csproj", "{53382E4F-3BBA-4987-AFE0-30FCF66762CE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{53382E4F-3BBA-4987-AFE0-30FCF66762CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53382E4F-3BBA-4987-AFE0-30FCF66762CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53382E4F-3BBA-4987-AFE0-30FCF66762CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53382E4F-3BBA-4987-AFE0-30FCF66762CE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D3BF648D-487A-4E74-9852-39F15D1E03CD}
+	EndGlobalSection
+EndGlobal
